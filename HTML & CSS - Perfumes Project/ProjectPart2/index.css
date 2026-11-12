@@ -1,0 +1,23 @@
+/*
+ID:23413497
+Name: Durdona Asrorova
+File name:index.js
+Descriptions: js works for all the other html pages
+*/
+
+.hero {
+    background-image: url('img/background/background.jpg');
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}

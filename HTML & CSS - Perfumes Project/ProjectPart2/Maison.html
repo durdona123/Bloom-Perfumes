@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Durdona Asrorova">
+  <meta name="description" content="Maison Francis Kurkdjian Perfume Store">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+  
+  <style>
+    .maison-hero {
+      background-image: url('img/maisonHeading.jpg');
+      height: 350px;
+      width: 100%;
+      background-size: contain;
+      background-position: center;
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+
+
+    .nav-link {
+      font-family: 'Georgia', serif;
+      /* elegant font for navigation */
+      font-size: 18px;
+
+
+    }
+  </style>
+</head>
+
+<body onload="updateCartCount()">
+
+  <div class="container-fluid maison-hero">
+
+  </div>
+  </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <div class="container-fluid">
+
+    <!-- LEFT SIDE -->
+    <ul class="navbar-nav me-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home |</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="LouisVuitton.html">Louis Vuitton |</a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="Creed.html">Creed |</a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="Killian.html">Killian |</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="Maison.html">Maison Francis Kurkdjian </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT SIDE -->
+    <ul class="navbar-nav ms-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">Our Story |</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact |</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="cart.html">
+          Cart (<span id="cart-count">0</span>)
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+  <!-- PRODUCTS -->
+  <div class="container mt-4">
+    <div class="row" id="product-list"></div>
+  </div>
+
+  <div class="container mt-4 text-center">
+
+
+  </div>
+  <!-- JS ARRAY Listing-->
+  <script>
+    const products = [
+      {
+        name: "a La Rose",
+        price: "300",
+        image: "img/Maison/F/aLaRose.jpg",
+        description: "A delicate bouquet of roses, blending the freshness of Damask and Centifolia with a hint of citrus and musk."
+      },
+      {
+        name: "Amyris Femme",
+        price: "250",
+        image: "img/Maison/F/amyris_Femme.jpg",
+        description: "A vibrant floral fragrance with notes of amyris, iris, and vanilla,  creating a warm and inviting scent."
+      },
+      {
+        name: "Baccarat Rouge 540",
+        price: "350",
+        image: "img/Maison/F/baccaratRouge540.jpg",
+        description: "A luxurious blend of jasmine, saffron, cedarwood, and ambergris, creating a rich and captivating fragrance."
+      },
+      {
+        name: "Ferminin Pluriel",
+        price: "300",
+        image: "img/Maison/F/femininPluriel.jpg",
+        description: "A sophisticated floral fragrance with notes of iris, orange blossom, and musk, evoking elegance and femininity."
+      },
+      {
+        name: "Grand Soir",
+        price: "350",
+        image: "img/Maison/F/grandSoir.jpg",
+        description: "A warm and opulent scent with notes of amber, tonka bean, and vanilla, perfect for evening wear."
+      },
+      {
+        name: "Leau aLa Rose",
+        price: "300",
+        image: "img/Maison/F/leau_aLa_rose.jpg",
+        description: "A fresh and airy take on the classic rose fragrance, with notes of Damask rose, bergamot, and musk, creating a light and romantic scent."
+      },
+
+      /////This side is for mens perfumes
+      {
+        name: "Amyris Homme",
+        price: "250",
+        image: "img/Maison/M/AmyrisHomme.jpg",
+        description: "A fresh and woody fragrance with notes of amyris, iris, and vanilla, creating a modern and sophisticated scent."
+      },
+      {
+        name: "Grand Soir",
+        price: "350",
+        image: "img/Maison/M/grandSoir.jpg",
+        description: "A warm and opulent scent with notes of amber, tonka bean, and vanilla, perfect for evening wear."
+      },
+      {
+        name: "Homme Pluriel",
+        price: "300",
+        image: "img/Maison/M/HommeAlaRose.jpg",
+        description: "A refined and versatile fragrance with notes of iris, orange blossom, and musk, suitable for any occasion."
+      },
+      {
+        name: "Kurky",
+        price: "300",
+        image: "img/Maison/M/kurky.jpg",
+        description: "A bold and distinctive scent with notes of leather, spices, and amber, embodying the spirit of adventure and individuality."
+      },
+      {
+        name: "Masculin Pluriel",
+        price: "300",
+        image: "img/Maison/M/masculinPluriel.jpg",
+        description: "A sophisticated and elegant fragrance with notes of iris, orange blossom, and musk, creating a timeless and masculine scent."
+      },
+      {
+        name: "oud",
+        price: "350",
+        image: "img/Maison/M/oud.jpg",
+        description: "A rich and exotic fragrance with notes of oud, rose, and amber, evoking the mystique and allure of the Middle East."
+      }
+
+    ];
+window.products = products;
+</script>
+ // RENDER PRODUCTS
+ <script>
+const container = document.getElementById("product-list");
+
+products.forEach((product, index) => {
+  container.innerHTML += `
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
+      <div class="card h-100">
+
+        <img src="${product.image}" class="card-img-top">
+
+        <div class="card-body d-flex flex-column">
+
+          <h5>${product.name}</h5>
+          <p>${product.description}</p>
+          <p>$${product.price}</p>
+
+         <button class="btn btn-dark mt-auto"
+  onclick="addToCart(${index})">
+  Add To Cart
+</button>
+
+        </div>
+      </div>
+    </div>
+  `;
+});
+</script>
+ <script src="index.js"></script>
+</body>
+</html>
